@@ -1,0 +1,63 @@
+---
+id: ae338592-6c83-4e39-89dd-5e69636dcc3d
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Opus Employee -> RO Role Assignment (Fakturagodkender)
+          sourceType: { id: 16eeb8d9-b2f7-486c-96a5-2a75d4ea983d, name: Opus Employee }
+          targetType: { id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7, name: Role Assignment }
+          idSeed: employeeId
+          transform:
+            type: suffix
+            suffix: Fakturagodkender
+          condition:
+            type: mustBeTruthy
+            attribute: invoiceRecipient
+          mappings:
+            name:
+              sourceAttribute: employeeId
+              targetAttribute: name
+              transform:
+                type: constant
+                value: Fakturagodkender
+            employment:
+              sourceAttribute: employeeId
+              targetAttribute: employment
+              transform:
+                type: relation
+                target: { id: 06c495eb-fcef-4c09-996f-63fd2dfea427, name: Employment }
+            role:
+              sourceAttribute: employeeId
+              targetAttribute: role
+              transform:
+                type: constant
+                value: { id: 828b74be-a48c-4dff-9925-7768c7aa2add, name: Fakturagodkender }
+            fakturagodkendelse:
+              sourceAttribute: employeeId
+              targetAttribute: responsibilities.fakturagodkendelse
+              transform:
+                type: constant
+                value: { id: a8210d70-c8fc-4ee5-9d69-3ea2773a7c8e, name: Fakturagodkendelse }
+            propagateFrom:
+              sourceAttribute: orgUnit
+              targetAttribute: propagateFrom
+              transform:
+                type: relation
+                target: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
+            godkenderniveau:
+              sourceAttribute: invoiceLevel1
+              targetAttribute: aliases.godkenderniveau
+            beloebsgraense:
+              sourceAttribute: invoiceLevel1Text
+              targetAttribute: aliases.beloebsgraense
+            activeFrom:
+              sourceAttribute: activeFrom
+              targetAttribute: activeFrom
+              transform: minimum
+            activeTo:
+              sourceAttribute: activeTo
+              targetAttribute: activeTo
+              transform: minimum
+        from: 2018-01-01T00:00:00.000Z
+...

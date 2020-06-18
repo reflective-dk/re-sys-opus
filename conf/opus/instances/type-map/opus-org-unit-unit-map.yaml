@@ -1,0 +1,67 @@
+---
+id: 5707d846-59b3-4d56-a4c8-7fb10f8611b3
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Thisted Opus Org Unit -> RO Unit
+          sourceType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
+          targetType: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
+          idSeed: orgUnitId
+          mappings:
+            activeFrom:
+              sourceAttribute: activeFrom
+              targetAttribute: activeFrom
+              transform: minimum
+            activeTo:
+              sourceAttribute: activeTo
+              targetAttribute: activeTo
+              transform: minimum
+            owner:
+              sourceAttribute: orgUnitId
+              targetAttribute: owner
+              transform:
+                type: constant
+                value: { id: fdb25c9f-78cc-588c-a334-eba78f2aabac, name: Thisted Organisation }
+            parent:
+              sourceAttribute: parentOrgUnit
+              targetAttribute: parents.administrativ
+              transform:
+                type: relation
+                target: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
+            name:
+              sourceAttribute: name
+              targetAttribute: name
+            shortName:
+              sourceAttribute: shortName
+              targetAttribute: shortName
+            orgUnitId:
+              sourceAttribute: orgUnitId
+              targetAttribute: foreignIds.orgUnitId
+            unitType:
+              sourceAttribute: orgType
+              targetAttribute: unitType
+              transform:
+                type: lookup
+                lookupAttribute: foreignIds.opusId
+                query: { relatesTo: { class: acdce88a-ec17-4d39-a850-a083d64c28ac } }
+            phoneNumbers:
+              sourceAttribute: phoneNumber
+              targetAttribute: phoneNumbers.generic
+            locations:
+              sourceAttribute: orgUnitId
+              targetAttribute: locations.generic
+              transform:
+                type: relation
+                target: { id: cfd8d4db-96cd-45e2-8de7-0b257b63a4e7, name: Location }
+            ean:
+              sourceAttribute: eanNr
+              targetAttribute: ean.generic
+            seNr:
+              sourceAttribute: seNr
+              targetAttribute: seNr
+            costCenters:
+              sourceAttribute: costCenter
+              targetAttribute: costCenters.generic
+        from: 2018-01-01T00:00:00.000Z
+...

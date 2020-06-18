@@ -1,0 +1,34 @@
+---
+id: 8b4263b7-ded0-4286-9528-d226bf45e136
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Opus Employee -> RO Person
+          sourceType: { id: 16eeb8d9-b2f7-486c-96a5-2a75d4ea983d, name: Opus Employee }
+          targetType: { id: 66d33a37-f73c-4723-8dca-5feb9cf420e4, name: Person }
+          idSeed: cpr
+          condition:
+            type: mustExist
+            attribute: orgUnit
+          mappings:
+            cprNr:
+              sourceAttribute: cpr
+              targetAttribute: cprNr
+            name:
+              sourceAttribute: name
+              targetAttribute: name
+            givenName:
+              sourceAttribute: firstName
+              targetAttribute: givenName
+            familyName:
+              sourceAttribute: lastName
+              targetAttribute: familyName
+            address:
+              sourceAttribute: address
+              targetAttribute: address
+              transform:
+                type: relation
+                target: { id: 6ec80fc8-4ba4-49e2-88bf-e31032cca129, name: Address }
+        from: 2018-01-01T00:00:00.000Z
+...

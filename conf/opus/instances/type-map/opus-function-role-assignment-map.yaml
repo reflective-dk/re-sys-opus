@@ -1,0 +1,50 @@
+---
+id: 97caf29e-22ae-437c-8125-bd314282574c
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Opus Function -> RO Role Assignment
+          sourceType: { id: 33342c0b-076a-4f95-b391-8ab52ba64fa6, name: Opus Function }
+          targetType: { id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7, name: Role Assignment }
+          idSeed: [ employeeId, artId ]
+          transform: join
+          mappings:
+            name:
+              sourceAttribute: artId
+              targetAttribute: name
+              transform:
+                - type: lookup
+                  lookupAttribute: foreignIds.artId
+                  query: { relatesTo: { class: c4be5a95-1320-4996-b219-e2f6f7cef8dd } }
+                - type: descend
+                  attribute: name
+            employment:
+              sourceAttribute: employeeId
+              targetAttribute: employment
+              transform:
+                type: relation
+                target: { id: 06c495eb-fcef-4c09-996f-63fd2dfea427, name: Employment }
+            role:
+              sourceAttribute: artId
+              targetAttribute: role
+              transform:
+                type: lookup
+                lookupAttribute: foreignIds.artId
+                query: { relatesTo: { class: c4be5a95-1320-4996-b219-e2f6f7cef8dd } }
+            propagateFrom:
+              sourceAttribute:
+                type: path
+                path: [ employee, orgUnit ]
+              targetAttribute: propagateFrom
+              transform:
+                type: relation
+                target: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
+            activeFrom:
+              sourceAttribute: startDate
+              targetAttribute: activeFrom
+            activeTo:
+              sourceAttribute: endDate
+              targetAttribute: activeTo
+        from: 2018-01-01T00:00:00.000Z
+...

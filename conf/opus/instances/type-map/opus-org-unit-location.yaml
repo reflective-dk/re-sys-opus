@@ -1,0 +1,36 @@
+---
+id: 47686cf0-7d51-497a-b156-d27a241e2492
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Opus Org Unit -> RO Location
+          sourceType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
+          targetType: { id: cfd8d4db-96cd-45e2-8de7-0b257b63a4e7, name: Location }
+          idSeed: orgUnitId
+          mappings:
+            name:
+              sourceAttribute: name
+              targetAttribute: name
+            address:
+              sourceAttribute: street
+              targetAttribute: address
+              transform:
+                type: relation
+                target: { id: 6ec80fc8-4ba4-49e2-88bf-e31032cca129, name: Address }
+            pNr:
+              sourceAttribute: pNr
+              targetAttribute: pNr
+            phoneNumbers:
+              sourceAttribute: phoneNumber
+              targetAttribute: phoneNumbers.opus
+            activeFrom:
+              sourceAttribute: activeFrom
+              targetAttribute: activeFrom
+              transform: minimum
+            activeTo:
+              sourceAttribute: activeTo
+              targetAttribute: activeTo
+              transform: minimum
+        from: 2018-01-01T00:00:00.000Z
+...

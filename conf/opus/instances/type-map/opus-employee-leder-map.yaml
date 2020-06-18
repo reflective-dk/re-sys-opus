@@ -1,0 +1,57 @@
+---
+id: 8cc67066-a549-4df4-b783-8db54b4d61dd
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Opus Employee -> RO Role Assignment (Leder)
+          sourceType: { id: 16eeb8d9-b2f7-486c-96a5-2a75d4ea983d, name: Opus Employee }
+          targetType: { id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7, name: Role Assignment }
+          idSeed: employeeId
+          condition:
+            type: mustBeTruthy
+            attribute: isManager
+          mappings:
+            name:
+              sourceAttribute: employeeId
+              targetAttribute: name
+              transform:
+                type: constant
+                value: Leder
+            employment:
+              sourceAttribute: employeeId
+              targetAttribute: employment
+              transform:
+                type: relation
+                target: { id: 06c495eb-fcef-4c09-996f-63fd2dfea427, name: Employment }
+            role:
+              sourceAttribute: employeeId
+              targetAttribute: role
+              transform:
+                type: constant
+                value: { id: 910b5480-71b1-4b57-a713-6c7dfa6566d1, name: Leder }
+            personale:
+              sourceAttribute: employeeId
+              targetAttribute: responsibilities.personale
+              transform:
+                type: constant
+                value: { id: 87341d78-23db-4d78-94cf-5fd02b73060a, name: Personale }
+            propagateFrom:
+              sourceAttribute: orgUnit
+              targetAttribute: propagateFrom
+              transform:
+                type: relation
+                target: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
+            ledelsesniveau:
+              sourceAttribute: superiorLevel
+              targetAttribute: aliases.ledelsesniveau
+            activeFrom:
+              sourceAttribute: activeFrom
+              targetAttribute: activeFrom
+              transform: minimum
+            activeTo:
+              sourceAttribute: activeTo
+              targetAttribute: activeTo
+              transform: minimum
+        from: 2018-01-01T00:00:00.000Z
+...

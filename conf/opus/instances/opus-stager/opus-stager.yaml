@@ -1,0 +1,9 @@
+---
+id: e289e2c9-3b28-436d-84e1-c6a7c999c3f4
+registrations:
+  - validity:
+      - input:
+          class: { id: 06f2dfc7-3f34-4c90-992a-54796009bd78, name: Opus Stager }
+          name: Generic Opus Stager
+        from: 2018-01-01T00:00:00.000Z
+...
