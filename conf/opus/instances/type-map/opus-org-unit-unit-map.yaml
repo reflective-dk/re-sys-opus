@@ -17,12 +17,6 @@ registrations:
               sourceAttribute: activeTo
               targetAttribute: activeTo
               transform: minimum
-            owner:
-              sourceAttribute: orgUnitId
-              targetAttribute: owner
-              transform:
-                type: constant
-                value: { id: fdb25c9f-78cc-588c-a334-eba78f2aabac, name: Thisted Organisation }
             parent:
               sourceAttribute: parentOrgUnit
               targetAttribute: parents.administrativ
