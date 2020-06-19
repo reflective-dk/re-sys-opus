@@ -9,6 +9,7 @@ registrations:
           targetType: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
           idSeed: orgUnitId
           mappings:
+            # Note: Unit Type and Unit Owner are handled by tenant-specific type maps
             activeFrom:
               sourceAttribute: activeFrom
               targetAttribute: activeFrom
@@ -32,13 +33,6 @@ registrations:
             orgUnitId:
               sourceAttribute: orgUnitId
               targetAttribute: foreignIds.orgUnitId
-            unitType:
-              sourceAttribute: orgType
-              targetAttribute: unitType
-              transform:
-                type: lookup
-                lookupAttribute: foreignIds.opusId
-                query: { relatesTo: { class: acdce88a-ec17-4d39-a850-a083d64c28ac } }
             phoneNumbers:
               sourceAttribute: phoneNumber
               targetAttribute: phoneNumbers.generic
