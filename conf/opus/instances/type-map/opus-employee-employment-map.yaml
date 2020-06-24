@@ -37,7 +37,10 @@ registrations:
               targetAttribute: foreignIds.employeeId
             phoneNumbers:
               sourceAttribute: workPhone
-              targetAttribute: phoneNumbers.workPhone
+              targetAttribute: phoneNumbers.opus
+            emailAddresses:
+              sourceAttribute: email
+              targetAttribute: emailAddresses.opus
             workingAt:
               sourceAttribute: orgUnit
               targetAttribute: workingAt.opus
