@@ -33,7 +33,7 @@
     "re-common-app": "git+ssh://git@github.com/reflective-dk/re-common-app.git",
     "re-conf-util": "git+ssh://git@github.com/reflective-dk/re-conf-util.git",
     "re-models": "git+ssh://git@github.com/reflective-dk/re-models.git",
-    "reflective-api": "git://github.com/reflective-dk/reflective-api.git"
+    "reflective-api": "git+ssh://git@github.com/reflective-dk/reflective-api.git"
   },
   "devDependencies": {
     "re-core-cli": "git+ssh://git@github.com:reflective-dk/re-core-cli.git"
