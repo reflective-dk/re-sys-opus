@@ -9,9 +9,16 @@ registrations:
           targetType: { id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7, name: Role Assignment }
           idSeed: employeeId
           condition:
-            type: mustBeTruthy
-            attribute: isManager
+            - type: mustBeTruthy
+              attribute: isManager
+            - type: mustNotProduceValue
+              mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                type: path
+                path: [ employedAt, notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: employeeId
               targetAttribute: name

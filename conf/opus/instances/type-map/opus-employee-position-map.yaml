@@ -8,15 +8,20 @@ registrations:
           sourceType: { id: 16eeb8d9-b2f7-486c-96a5-2a75d4ea983d, name: Opus Employee }
           targetType: { id: add5e887-841f-4f36-bb7e-0676d67c494f, name: Position }
           idSeed: position
+          condition:
+            type: mustNotProduceValue
+            mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                type: path
+                path: [ employedAt, notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: position
               targetAttribute: name
             shortName:
               sourceAttribute: positionShort
               targetAttribute: shortName
-            employeeId:
-              sourceAttribute: positionId
-              targetAttribute: foreignIds.positionId
         from: 2018-01-01T00:00:00.000Z
 ...

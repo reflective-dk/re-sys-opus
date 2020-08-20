@@ -9,9 +9,16 @@ registrations:
           targetType: { id: 66d33a37-f73c-4723-8dca-5feb9cf420e4, name: Person }
           idSeed: cpr
           condition:
-            type: mustExist
-            attribute: orgUnit
+            - type: mustExist
+              attribute: orgUnit
+            - type: mustNotProduceValue
+              mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                type: path
+                path: [ employedAt, notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             cprNr:
               sourceAttribute: cpr
               targetAttribute: cprNr

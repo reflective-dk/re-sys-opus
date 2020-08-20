@@ -12,9 +12,16 @@ registrations:
             type: suffix
             suffix: Fakturagodkender
           condition:
-            type: mustBeTruthy
-            attribute: invoiceRecipient
+            - type: mustBeTruthy
+              attribute: invoiceRecipient
+            - type: mustNotProduceValue
+              mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                type: path
+                path: [ employedAt, notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: employeeId
               targetAttribute: name
