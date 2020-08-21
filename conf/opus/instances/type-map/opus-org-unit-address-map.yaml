@@ -9,8 +9,8 @@ registrations:
           targetType: { id: 6ec80fc8-4ba4-49e2-88bf-e31032cca129, name: Address }
           idSeed: street
           condition:
-            type: mustNotProduceValue
-            mapping: excludeFromAdministrative
+            type: mustNotBeTruthy
+            mapping: notAdministrativeUnit
           mappings:
             name:
               sourceAttribute: street

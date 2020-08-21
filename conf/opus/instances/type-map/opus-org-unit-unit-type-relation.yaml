@@ -8,6 +8,9 @@ registrations:
           sourceType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
           targetType: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
           idSeed: orgUnitId
+          condition:
+            type: mustNotBeTruthy
+            mapping: notAdministrativeUnit
           mappings:
             unitType:
               sourceAttribute: orgType
