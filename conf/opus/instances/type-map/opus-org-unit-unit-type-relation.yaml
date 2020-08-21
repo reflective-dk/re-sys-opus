@@ -1,0 +1,19 @@
+---
+id: 81bdb9da-42e2-433c-8df1-a2e0511549d7
+registrations:
+  - validity:
+      - input:
+          class: { id: efefe41d-805b-478f-8e4d-841085cb7dfa, name: Type Map }
+          name: Opus Org Unit -> RO Unit Type (Relation)
+          sourceType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
+          targetType: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
+          idSeed: orgUnitId
+          mappings:
+            unitType:
+              sourceAttribute: orgType
+              targetAttribute: unitType
+              transform:
+                type: relation
+                target: { id: acdce88a-ec17-4d39-a850-a083d64c28ac, name: Unit Type }
+        from: 2018-01-01T00:00:00.000Z
+...
