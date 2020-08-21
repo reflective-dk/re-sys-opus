@@ -10,7 +10,7 @@ registrations:
           idSeed: orgUnitId
           condition:
             type: mustNotBeTruthy
-            mapping: notAdministrativeUnit
+            attribute: notAdministrativeUnit
           mappings:
             # Note: Unit Type and Unit Owner are handled by tenant-specific type maps
             activeFrom:

@@ -10,7 +10,7 @@ registrations:
           idSeed: orgType
           condition:
             type: mustNotBeTruthy
-            mapping: notAdministrativeUnit
+            attribute: notAdministrativeUnit
           mappings:
             name:
               sourceAttribute: orgTypeTxt
