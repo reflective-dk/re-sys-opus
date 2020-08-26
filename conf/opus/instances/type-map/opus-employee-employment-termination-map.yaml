@@ -8,8 +8,17 @@ registrations:
           sourceType: { id: 16eeb8d9-b2f7-486c-96a5-2a75d4ea983d, name: Opus Employee }
           targetType: { id: 06c495eb-fcef-4c09-996f-63fd2dfea427, name: Employment }
           idSeed: employeeId
-          # activeTo is handled with no condition on unit existence
+          condition:
+            - type: mustExist
+              attribute: orgUnit
+            - type: mustNotProduceValue
+              mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                type: path
+                path: [ employedAt, notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             activeTo:
               sourceAttribute: activeTo
               targetAttribute: activeTo

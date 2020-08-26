@@ -9,8 +9,10 @@ registrations:
           targetType: { id: 38df45c2-f4e2-4ffd-b91f-bc509ce8bcbf, name: User Account }
           idSeed: userId
           condition:
-            type: mustNotProduceValue
-            mapping: excludeFromAdministrative
+            - type: mustExist
+              attribute: orgUnit
+            - type: mustNotProduceValue
+              mapping: excludeFromAdministrative
           mappings:
             excludeFromAdministrative:
               sourceAttribute:

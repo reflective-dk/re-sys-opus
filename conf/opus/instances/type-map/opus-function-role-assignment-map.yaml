@@ -9,7 +9,15 @@ registrations:
           targetType: { id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7, name: Role Assignment }
           idSeed: [ employeeId, artId ]
           transform: join
+          condition:
+            type: mustNotProduceValue
+            mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                type: path
+                path: [ employee, employedAt, notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: artId
               targetAttribute: name
