@@ -9,8 +9,6 @@ registrations:
           targetType: { id: 06c495eb-fcef-4c09-996f-63fd2dfea427, name: Employment }
           idSeed: employeeId
           condition:
-            - type: mustExist
-              attribute: orgUnit
             - type: mustNotProduceValue
               mapping: excludeFromAdministrative
           mappings:

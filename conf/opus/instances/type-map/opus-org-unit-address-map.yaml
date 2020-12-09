@@ -24,5 +24,11 @@ registrations:
             city:
               sourceAttribute: city
               targetAttribute: city
+            country:
+              sourceAttribute: street
+              targetAttribute: country
+              transform:
+                type: constant
+                value: Danmark
         from: 2018-01-01T00:00:00.000Z
 ...
