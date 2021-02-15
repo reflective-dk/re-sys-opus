@@ -7,7 +7,8 @@ registrations:
           name: Opus Org Unit -> RO Location Address
           sourceType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
           targetType: { id: 6ec80fc8-4ba4-49e2-88bf-e31032cca129, name: Address }
-          idSeed: street
+          idSeed: [ street, zipCode ]
+          transform: join
           condition:
             type: mustNotBeTruthy
             attribute: notAdministrativeUnit
