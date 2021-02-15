@@ -13,7 +13,7 @@ registrations:
             # into the same object
             - type: replace
               useRegex: true
-              searchValue: '[\\s.,;:-]+'
+              searchValue: '[\s.,;:-]+'
               newValue: ' '
             - type: titlify
           condition:
@@ -33,7 +33,7 @@ registrations:
                 # variations into the same object
                 - type: replace
                   useRegex: true
-                  searchValue: '[\\s.,;:]+'
+                  searchValue: '[\s.,;:]+'
                   newValue: ' '
                 - type: titlify
             shortName:
@@ -44,7 +44,7 @@ registrations:
                 # variations into the same object
                 - type: replace
                   useRegex: true
-                  searchValue: '[\\s.,;:]+'
+                  searchValue: '[\s.,;:]+'
                   newValue: ' '
                 - type: titlify
             nameAlias:
@@ -54,7 +54,7 @@ registrations:
                 # Remove '.' because value is also used as key (avoid nesting)
                 type: replace
                 useRegex: true
-                searchValue: '\\.+'
+                searchValue: '\.+'
                 newValue: ' '
             shortNameAlias:
               sourceAttribute: positionShort
@@ -63,7 +63,7 @@ registrations:
                 # Remove '.' because value is also used as key (avoid nesting)
                 type: replace
                 useRegex: true
-                searchValue: '\\.+'
+                searchValue: '\.+'
                 newValue: ' '
         from: 2018-01-01T00:00:00.000Z
 ...

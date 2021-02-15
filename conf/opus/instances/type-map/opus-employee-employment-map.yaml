@@ -36,7 +36,7 @@ registrations:
                 # into the same object
                 - type: replace
                   useRegex: true
-                  searchValue: '[\\s.,;:-]+'
+                  searchValue: '[\s.,;:-]+'
                   newValue: ' '
                 - type: titlify
                 - type: relation
