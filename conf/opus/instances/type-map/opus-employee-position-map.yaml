@@ -8,14 +8,7 @@ registrations:
           sourceType: { id: 16eeb8d9-b2f7-486c-96a5-2a75d4ea983d, name: Opus Employee }
           targetType: { id: add5e887-841f-4f36-bb7e-0676d67c494f, name: Job Title }
           idSeed: position
-          transform:
-            # Replace whitespace and punctuation to coerce job title variations
-            # into the same object
-            - type: replace
-              useRegex: true
-              searchValue: '[\s.,;:-]+'
-              newValue: ' '
-            - type: titlify
+          transform: titlify
           condition:
             type: mustNotProduceValue
             mapping: excludeFromAdministrative
@@ -28,42 +21,10 @@ registrations:
             name:
               sourceAttribute: position
               targetAttribute: name
-              transform:
-                # Replace whitespace and punctuation to coerce job title
-                # variations into the same object
-                - type: replace
-                  useRegex: true
-                  searchValue: '[\s.,;:]+'
-                  newValue: ' '
-                - type: titlify
+              transform: titlify
             shortName:
               sourceAttribute: positionShort
               targetAttribute: shortName
-              transform:
-                # Replace whitespace and punctuation to coerce job title
-                # variations into the same object
-                - type: replace
-                  useRegex: true
-                  searchValue: '[\s.,;:]+'
-                  newValue: ' '
-                - type: titlify
-            nameAlias:
-              sourceAttribute: position
-              targetAttribute: aliases.$
-              transform:
-                # Remove '.' because value is also used as key (avoid nesting)
-                type: replace
-                useRegex: true
-                searchValue: '\.+'
-                newValue: ' '
-            shortNameAlias:
-              sourceAttribute: positionShort
-              targetAttribute: aliases.$
-              transform:
-                # Remove '.' because value is also used as key (avoid nesting)
-                type: replace
-                useRegex: true
-                searchValue: '\.+'
-                newValue: ' '
+              transform: titlify
         from: 2018-01-01T00:00:00.000Z
 ...
