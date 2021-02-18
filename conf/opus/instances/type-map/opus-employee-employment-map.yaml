@@ -32,9 +32,8 @@ registrations:
               sourceAttribute: position
               targetAttribute: position
               transform:
-                - type: titlify
-                - type: relation
-                  target: { id: add5e887-841f-4f36-bb7e-0676d67c494f, name: Position }
+                type: relation
+                target: { id: add5e887-841f-4f36-bb7e-0676d67c494f, name: Position }
             positionId:
               sourceAttribute: positionId
               targetAttribute: foreignIds.positionId
