@@ -25,8 +25,9 @@ registrations:
             activeFrom:
               sourceAttribute: activeFrom
               targetAttribute: activeFrom
-            # activeTo is handled in a separate type map with no condition on
-            # unit existence
+            activeTo:
+              sourceAttribute: activeTo
+              targetAttribute: activeTo
             position:
               # TODO: Rename reference to jobTitle
               sourceAttribute: position
