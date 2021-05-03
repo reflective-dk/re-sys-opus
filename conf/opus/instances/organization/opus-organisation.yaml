@@ -1,0 +1,9 @@
+---
+id: e84f7ac5-6244-48fa-a50f-119893f79feb
+registrations:
+  - validity:
+      - input:
+          class: { id: 5fa95ccd-a801-4cbb-9400-e7e1ee7cee44, name: Organization }
+          name: Opus Organisation
+        from: 2018-01-01T00:00:00.000Z
+...

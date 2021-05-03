@@ -1,0 +1,22 @@
+---
+id: 0d189f57-5e33-44f9-b16b-c2d40ce8490b
+registrations:
+  - validity:
+      - input:
+          class: { id: a07908c1-883f-41e6-9beb-02981f48b067, name: Hierarchy }
+          name: Opus Organisation
+          owner: { id: e84f7ac5-6244-48fa-a50f-119893f79feb, name: Opus Organisation }
+          rootQuery:
+            query:
+              relatesTo:
+                class: 40864bd7-2ac2-468d-80a5-68aefa018524
+          rootFilter:
+            'parent': 'null'
+          pathElements:
+            0:
+              parentType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
+              childType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
+              relation: parent
+          primaryType: { id: 40864bd7-2ac2-468d-80a5-68aefa018524, name: Opus Org Unit }
+        from: 2018-01-01T00:00:00.000Z
+...
