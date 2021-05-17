@@ -1,0 +1,18 @@
+---
+id: ebef98ea-f81e-449a-b4ea-8d6cfe66e99d
+registrations:
+  - validity:
+      - input:
+          class:
+            id: efec2048-b4f3-4ffd-a7ba-b6698d412bbc
+            name: Process
+          name: ReConnect Opus Import
+          userStartable: false
+          includeDataForUser: false
+          chain: opus
+          category: Integration
+          system:
+            id: 9374800d-1ba6-5a9e-ae4a-d6da16e7e9df
+          bpmn: { hash: reconnect-opus-import.bpmn }
+        from: 2018-01-01T00:00:00.000Z
+...

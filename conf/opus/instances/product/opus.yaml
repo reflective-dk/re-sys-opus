@@ -1,9 +1,0 @@
----
-id: 2381d86f-f5c7-4141-a2bf-11b95f268dda
-registrations:
-  - validity:
-      - input:
-          class: { id: aa5d8880-06a1-46ff-9a55-89244a45a0f0, name: Product }
-          name: KMD Opus
-        from: 2018-01-01T00:00:00.000Z
-...

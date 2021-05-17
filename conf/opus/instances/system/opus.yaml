@@ -1,0 +1,9 @@
+---
+id: c98fddf7-37ed-49b3-a241-7c14a2ef43d7
+registrations:
+  - validity:
+      - input:
+          class: { id: e8bc40c5-e542-4bab-b6fc-64b2339ffa15, name: System }
+          name: Opus - Albertslund
+        from: 2018-01-01T00:00:00.000Z
+...
