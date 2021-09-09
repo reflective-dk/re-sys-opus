@@ -19,12 +19,6 @@ registrations:
                 type: path
                 path: [ employedAt, notAdministrativeUnit ]
               targetAttribute: excludeFromAdministrative
-            activeFrom:
-              sourceAttribute: activeFrom
-              targetAttribute: activeFrom
-            activeTo:
-              sourceAttribute: activeTo
-              targetAttribute: activeTo
             cprNr:
               sourceAttribute: cpr
               targetAttribute: cprNr
