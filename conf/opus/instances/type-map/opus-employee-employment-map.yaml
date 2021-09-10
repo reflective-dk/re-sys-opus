@@ -47,6 +47,9 @@ registrations:
             employeeId:
               sourceAttribute: employeeId
               targetAttribute: foreignIds.employeeId
+            employmentId:
+              sourceAttribute: employeeId
+              targetAttribute: employmentId
             phoneNumbers:
               sourceAttribute: workPhone
               targetAttribute: phoneNumbers.opus
