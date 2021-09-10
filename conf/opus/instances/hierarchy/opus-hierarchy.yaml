@@ -5,7 +5,13 @@ registrations:
       - input:
           class: { id: a07908c1-883f-41e6-9beb-02981f48b067, name: Hierarchy }
           name: Opus Organisation
-          owner: { id: e84f7ac5-6244-48fa-a50f-119893f79feb, name: Opus Organisation }
+          owner:
+            id: e84f7ac5-6244-48fa-a50f-119893f79feb
+            name: Opus Organisation
+          system:
+            id: c20f24f4-b3c5-4110-9a82-ff526d500249
+            name: Opus
+          category: salary
           rootQuery:
             query:
               relatesTo:
