@@ -1,0 +1,35 @@
+---
+id: c29067f9-3725-42c1-aa76-1db39b8c5c26
+registrations:
+  - validity:
+      - input:
+          class: { id: 36a0eb70-1ef1-45dd-a0bc-73c58685e012, name: View Definition }
+          name: OPUS Unit Admin View
+          associatedTypes:
+            unit:
+              id: 5cad9972-6560-4136-a9d5-40c2d109be9b
+              name: Unit
+          config:
+            ids: [ unit-admin-id ]
+            bundleRefs:
+              tenant: tenant
+              hierarchy: hierarchy
+            extensionRefs:
+              unitValues: unitValues
+          view:
+            id: unit-admin-id
+            view: ro-entity-admin
+            hierarchy: hierarchy
+            label: Enheder
+            value: unitValues
+            elementsConfig:
+              labelPosition: top
+              type: clean
+              borderless: true
+              tenant: tenant
+            editors:
+              40864bd7-2ac2-468d-80a5-68aefa018524:
+                view: opus-org-unit
+                template: "#snapshot.name#"
+        from: 2018-01-01T00:00:00.000Z
+...

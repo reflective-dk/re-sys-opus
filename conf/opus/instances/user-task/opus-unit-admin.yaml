@@ -1,0 +1,34 @@
+---
+id: f3b17be8-767c-48e7-a9eb-9dc8699ba3f1
+registrations:
+  - validity:
+      - input:
+          class:
+            id: b4b4c29e-3956-434d-8b1e-97914ae6de55
+            name: User Task
+          name: Vedligehold af enheder
+          validity: dirty
+          bundle:
+            unitHierarchy:
+              type: hierarchy
+              hierarchyQuery:
+                relatesTo:
+                  class: a07908c1-883f-41e6-9beb-02981f48b067
+                matches:
+                  category: salary
+              projection: false
+          serialization:
+            unitValues:
+              view: view
+              id: unit-admin-id
+              expectMany: true
+          submitButtonLabel: Udfør
+          showProcessDetails: false
+          controller:
+            hash: opus-unit-admin-ctrl.js
+          views:
+            view:
+              id: c29067f9-3725-42c1-aa76-1db39b8c5c26
+              name: OPUS Unit Admin View
+        from: 2005-01-01T00:00:00.000Z
+...

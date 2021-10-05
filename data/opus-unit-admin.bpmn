@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1">
+  <bpmn:collaboration id="_9ecf284f-3149-4ccf-ab55-8c7edb76fa10">
+    <bpmn:participant id="Participant_1cmscbv" name="OPUS Enheder" processRef="R9ecf284f-3149-4ccf-ab55-8c7edb76fa10" />
+  </bpmn:collaboration>
+  <bpmn:process id="R9ecf284f-3149-4ccf-ab55-8c7edb76fa10" name="Enheder" isExecutable="true" camunda:versionTag="1.0" camunda:taskPriority="1">
+    <bpmn:laneSet>
+      <bpmn:lane id="Lane_19ch5nt" name="Organisation Administration">
+        <bpmn:childLaneSet>
+          <bpmn:lane id="Lane_0ilwzdy" name="Organization Administrator">
+            <bpmn:extensionElements>
+              <camunda:properties>
+                <camunda:property name="responsibility" value="cc09e988-017e-429f-8031-8ba12333370b" />
+              </camunda:properties>
+            </bpmn:extensionElements>
+            <bpmn:flowNodeRef>EndEvent_0718vr8</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>merge</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>edit</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>rounitadminstart</bpmn:flowNodeRef>
+          </bpmn:lane>
+        </bpmn:childLaneSet>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:endEvent id="EndEvent_0718vr8">
+      <bpmn:incoming>SequenceFlow_0yrv99v</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="merge" name="Merge unit changes" camunda:type="external" camunda:topic="merge">
+      <bpmn:incoming>SequenceFlow_08rl4ek</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0yrv99v</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="edit" name="Administrér enheder" camunda:formKey="f3b17be8-767c-48e7-a9eb-9dc8699ba3f1">
+      <bpmn:incoming>SequenceFlow_14zjcbt</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_08rl4ek</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="rounitadminstart">
+      <bpmn:outgoing>SequenceFlow_14zjcbt</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_08rl4ek" sourceRef="edit" targetRef="merge" />
+    <bpmn:sequenceFlow id="SequenceFlow_14zjcbt" sourceRef="rounitadminstart" targetRef="edit" />
+    <bpmn:sequenceFlow id="SequenceFlow_0yrv99v" sourceRef="merge" targetRef="EndEvent_0718vr8" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="_9ecf284f-3149-4ccf-ab55-8c7edb76fa10">
+      <bpmndi:BPMNShape id="Participant_1cmscbv_di" bpmnElement="Participant_1cmscbv" isHorizontal="true">
+        <dc:Bounds x="156" y="95" width="987" height="349" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_19ch5nt_di" bpmnElement="Lane_19ch5nt" isHorizontal="true">
+        <dc:Bounds x="186" y="95" width="957" height="349" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0ilwzdy_di" bpmnElement="Lane_0ilwzdy" isHorizontal="true">
+        <dc:Bounds x="216" y="95" width="927" height="349" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0yrv99v_di" bpmnElement="SequenceFlow_0yrv99v">
+        <di:waypoint x="944" y="272" />
+        <di:waypoint x="1007" y="272" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="380.5" y="251" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_14zjcbt_di" bpmnElement="SequenceFlow_14zjcbt">
+        <di:waypoint x="380" y="272" />
+        <di:waypoint x="479" y="272" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-210.5" y="250.5" width="90" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_08rl4ek_di" bpmnElement="SequenceFlow_08rl4ek">
+        <di:waypoint x="579" y="272" />
+        <di:waypoint x="844" y="272" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="-9" y="251" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_0718vr8_di" bpmnElement="EndEvent_0718vr8">
+        <dc:Bounds x="1007" y="254" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="944" y="304" width="65" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0hym356_di" bpmnElement="merge">
+        <dc:Bounds x="844" y="232" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="UserTask_01gt1p4_di" bpmnElement="edit">
+        <dc:Bounds x="479" y="232" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="rounitadminstart">
+        <dc:Bounds x="344" y="254" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="271" y="300" width="83" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

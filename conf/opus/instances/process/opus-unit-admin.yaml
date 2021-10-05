@@ -1,0 +1,17 @@
+---
+  id: 9ecf284f-3149-4ccf-ab55-8c7edb76fa10
+  registrations:
+    - validity:
+        - input:
+            class:
+              id: efec2048-b4f3-4ffd-a7ba-b6698d412bbc
+              name: Process
+            name: Enheder
+            userStartable: true
+            chain: opus-administration
+            category: OPUS Administration
+            system:
+              id: 9374800d-1ba6-5a9e-ae4a-d6da16e7e9df
+            bpmn: { hash: opus-unit-admin.bpmn }
+          from: 2020-01-01T00:00:00.000Z
+...
