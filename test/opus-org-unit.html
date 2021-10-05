@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Component test of opus-org-unit</title>
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="../node_modules/qunit/qunit/qunit.css">
+      <link rel="stylesheet" href="../node_modules/re-common-app/css/webix.css" type="text/css" />
+      <link rel="stylesheet" href="../node_modules/re-common-app/css/re-common.css" type="text/css" />
+      <link rel="stylesheet" href="../node_modules/re-common-app/css/test-fixture.css" type="text/css" />
+      <script src="../node_modules/qunit/qunit/qunit.js"></script>
+      <script src="../node_modules/re-common-app/lib/require.js"></script>
+      <script src="./test-fixture.js"></script>
+      <script src="./include.js"></script>
+    </head>
+    <body>
+      <div id="header"></div>
+      <div id="qunit-tests"></div>
+      <script>
+        /* global requirejs */
+        /* global QUnit */
+        QUnit.config.autostart = false;
+        requirejs(['webix', 'forms/mock_facilitator', 'common/request', 'views/opus/opus-org-unit'],
+        function (webix, MockFacilitator, request, view) {
+
+          let id;
+          QUnit.module("test ro-unit", function( hooks ) {
+            function newForm(assert, args) {
+              let element = document.getElementById("qunit-test-output-" + assert.test.testId).getElementsByClassName("qunit-assert-list")[0];
+              args = args||{};
+              id = webix.uid().toString();
+
+              return webix.ui({
+                container: element,
+                id: id + "_testform",
+                name: "test",
+                view: "form",
+                autoheight: true,
+                width: 600,
+                elements: [{
+                  id: id,
+                  view: "opus-org-unit",
+                  name: "unit",
+                  elementsConfig: {
+                    type: "clean",
+                    labelPosition: "top",
+                    margin: 10
+                  }
+                }],
+                on: {
+                  onChange: function(newv,oldv) {
+                    console.log("DEBUG: onChange form getValues()=",this.getValues());
+                  }
+                }
+              });
+            }
+
+            QUnit.test("Render", function (assert) {
+              let done = assert.async();
+              let form = newForm(assert);
+              let unit = form.elements.unit;
+              assert.ok(unit, "opus-org-unit know to webix");
+              done();
+            });
+
+          });
+
+          QUnit.start();
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+/* global requirejs */
+requirejs([
+    'views/common/re-section',
+    'views/common/re-template',
+    'views/common/re-panel',
+    'views/common/re-form',
+    'views/common/re-combo-list',
+    'views/common/re-combo-tree',
+    'views/common/re-multitree',
+    'views/common/re-tree',
+    'views/common/re-property',
+    'views/common/re-tree-property-view',
+    'views/common/re-uploader-view',
+    'views/common/re-multitree-view',
+    'views/common/re-combo-relation',
+    'views/common/re-datepicker',
+    'views/common/re-richselect-relation',
+    'views/common/snippets/active-periode',
+    'views/common/snippets/communication',
+    'views/common/snippets/entity'
+]);
