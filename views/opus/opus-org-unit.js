@@ -19,6 +19,11 @@ define([
           },{
             view: "text",
             readonly: true,
+            name: "parentOrgUnit",
+            label: "Overenhed"
+          },{
+            view: "text",
+            readonly: true,
             name: "client",
             label: "Klient"
           },{
@@ -129,17 +134,13 @@ define([
       let value = {};
       if (object.id) value.id = object.id;
       value.snapshot = Object.assign({}, object.snapshot, this.getValues());
-      if (value.snapshot.intraNote) {
-        _.set(value, "snapshot.aggregateSubTree.intraNote", value.snapshot.intraNote);
-        delete value.snapshot.intraNote;
+      if (value.snapshot.notAdministrativeUnit) {
+        _.set(value, "snapshot.aggregateSubTree.notAdministrativeUnit", value.snapshot.notAdministrativeUnit);
+        delete value.snapshot.notAdministrativeUnit;
       }
-      if (value.snapshot.stsOrg) {
-        _.set(value, "snapshot.aggregateSubTree.stsOrg", value.snapshot.stsOrg);
-        delete value.snapshot.stsOrg;
-      }
-      if (value.snapshot.institutetsNummer) {
-        _.set(value, "snapshot.foreignIds[institutetsNummer]", value.snapshot.institutetsNummer);
-        delete value.snapshot.institutetsNummer;
+      if (value.snapshot.noUpdateOfAdministrativeParent) {
+        _.set(value, "snapshot.aggregateSubTree.noUpdateOfAdministrativeParent", value.snapshot.noUpdateOfAdministrativeParent);
+        delete value.snapshot.noUpdateOfAdministrativeParent;
       }
       return value;
     },
@@ -148,9 +149,8 @@ define([
         this.config.object = object;
         wch.simpleSetValue.apply(this,[object]);
         this.setValues({
-          intraNote: _.get(object, "snapshot.aggregateSubTree.intraNote"),
-          stsOrg: _.get(object, "snapshot.aggregateSubTree.stsOrg"),
-          institutetsNummer: _.get(object, "snapshot.foreignIds[institutetsNummer]")
+          notAdministrativeUnit: _.get(object, "snapshot.aggregateSubTree.notAdministrativeUnit"),
+          noUpdateOfAdministrativeParent: _.get(object, "snapshot.aggregateSubTree.noUpdateOfAdministrativeParent")
         }, true);
       }
     }
