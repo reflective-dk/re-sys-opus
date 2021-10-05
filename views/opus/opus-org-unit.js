@@ -19,6 +19,16 @@ define([
           },{
             view: "text",
             readonly: true,
+            name: "longName",
+            label: "Navn"
+          },{
+            view: "text",
+            readonly: true,
+            name: "shortName",
+            label: "Kort navn"
+          },{
+            view: "text",
+            readonly: true,
             name: "parentOrgUnit",
             label: "Overenhed"
           },{
@@ -51,16 +61,6 @@ define([
           },
           activePeriode(config),
           {
-            view: "text",
-            readonly: true,
-            name: "shortName",
-            label: "Kort navn"
-          },{
-            view: "text",
-            readonly: true,
-            name: "longName",
-            label: "Langt navn"
-          },{
             view: "text",
             readonly: true,
             name: "street",
@@ -114,7 +114,7 @@ define([
             view: "checkbox",
             name: "notAdministrativeUnit",
             labelWidt: 0,
-            labelRight: "Undtaget enhed",
+            labelRight: "Undtaget fra administrativt hierarki",
             tooltip: "Undtag enhed fra opbygning af administrativ organisation"
           },{
             view: "checkbox",
@@ -134,24 +134,12 @@ define([
       let value = {};
       if (object.id) value.id = object.id;
       value.snapshot = Object.assign({}, object.snapshot, this.getValues());
-      if (value.snapshot.notAdministrativeUnit) {
-        _.set(value, "snapshot.aggregateSubTree.notAdministrativeUnit", value.snapshot.notAdministrativeUnit);
-        delete value.snapshot.notAdministrativeUnit;
-      }
-      if (value.snapshot.noUpdateOfAdministrativeParent) {
-        _.set(value, "snapshot.aggregateSubTree.noUpdateOfAdministrativeParent", value.snapshot.noUpdateOfAdministrativeParent);
-        delete value.snapshot.noUpdateOfAdministrativeParent;
-      }
       return value;
     },
     setValue: function(object) {
       if (object) {
         this.config.object = object;
         wch.simpleSetValue.apply(this,[object]);
-        this.setValues({
-          notAdministrativeUnit: _.get(object, "snapshot.aggregateSubTree.notAdministrativeUnit"),
-          noUpdateOfAdministrativeParent: _.get(object, "snapshot.aggregateSubTree.noUpdateOfAdministrativeParent")
-        }, true);
       }
     }
   }, webix.ui.form);
