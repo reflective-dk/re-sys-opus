@@ -6,9 +6,9 @@ registrations:
           class: { id: 36a0eb70-1ef1-45dd-a0bc-73c58685e012, name: View Definition }
           name: OPUS Unit Admin View
           associatedTypes:
-            unit:
-              id: 5cad9972-6560-4136-a9d5-40c2d109be9b
-              name: Unit
+            opusOrgUnit:
+              id: c29067f9-3725-42c1-aa76-1db39b8c5c26
+              name: OPUS org unit
           config:
             ids: [ unit-admin-id ]
             bundleRefs:
