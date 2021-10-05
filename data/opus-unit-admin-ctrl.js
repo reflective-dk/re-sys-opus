@@ -1,6 +1,6 @@
 define([
   'webix', 'common/promise', 'common/request', 'common/utils', 'common/lodash', 'common/ctrl-helper',
-  'views/ro/ro-entity-admin', 'views/opus/opus-unit'
+  'views/ro/ro-entity-admin', 'views/opus/opus-org-unit'
 ], function(webix, promise, request, utils, _, ch) {
   function Ctrl() {
   }
