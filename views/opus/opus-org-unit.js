@@ -134,6 +134,12 @@ define([
       let value = {};
       if (object.id) value.id = object.id;
       value.snapshot = Object.assign({}, object.snapshot, this.getValues());
+      if (!value.snapshot.notAdministrativeUnit && object.snapshot.notAdministrativeUnit === undefined) {
+        delete value.snapshot.notAdministrativeUnit;
+      }
+      if (!value.snapshot.noUpdateOfAdministrativeParent && object.snapshot.noUpdateOfAdministrativeParent === undefined) {
+        delete value.snapshot.noUpdateOfAdministrativeParent;
+      }
       return value;
     },
     setValue: function(object) {
