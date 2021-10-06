@@ -113,12 +113,16 @@ define([
           },{
             view: "checkbox",
             name: "notAdministrativeUnit",
+            checkValue: true,
+            uncheckValue: false,
             labelWidt: 0,
             labelRight: "Undtaget fra administrativt hierarki",
             tooltip: "Undtag enhed fra opbygning af administrativ organisation"
           },{
             view: "checkbox",
             name: "noUpdateOfAdministrativeParent",
+            checkValue: true,
+            uncheckValue: false,
             labelWidt: 0,
             labelRight: "Valgfri overenhed",
             tooltip: "Medtag ikke overenhed ved opbygning af administrativ organisation"
