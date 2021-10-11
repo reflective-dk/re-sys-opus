@@ -1,5 +1,5 @@
 {
-  "name": "re-conf-opus",
+  "name": "re-sys-opus",
   "version": "0.1.0",
   "description": "Configuration objects for an Opus integration",
   "main": "index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/reflective-dk/re-conf-opus.git"
+    "url": "git://github.com/reflective-dk/re-sys-opus.git"
   },
   "keywords": [
     "reflective",
