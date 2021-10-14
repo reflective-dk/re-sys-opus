@@ -24,6 +24,9 @@ registrations:
             parent:
               sourceAttribute: parentOrgUnit
               targetAttribute: parents.administrativ
+              condition:
+                type: mustNotBeTruthy
+                attribute: noUpdateOfAdministrativeParent
               transform:
                 type: relation
                 target: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
