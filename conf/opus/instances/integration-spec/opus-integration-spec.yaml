@@ -1,0 +1,81 @@
+---
+id: a3cd43b2-8d42-445f-920d-459205df4b3e
+registrations:
+  - validity:
+      - input:
+          class: { id: 0b436737-7dbe-443d-9d73-d9240ce4b17e, name: Integration Spec }
+          name: ReConnect Opus Integration Spec
+          system: { id: c20f24f4-b3c5-4110-9a82-ff526d500249, name: Opus }
+          reconnect: opus
+          sources:
+            opus:
+              id: a07bc64c-9f1b-4009-b377-04b513462591
+          process:
+            id: ebef98ea-f81e-449a-b4ea-8d6cfe66e99d
+            name: ReConnect Opus import
+          chain: opus
+          existence:
+            incorporate:
+              unit:
+                id: 5cad9972-6560-4136-a9d5-40c2d109be9b
+                name: Unit
+              employment:
+                id: 06c495eb-fcef-4c09-996f-63fd2dfea427
+                name: Employment
+              person:
+                id: 66d33a37-f73c-4723-8dca-5feb9cf420e4
+                name: Person
+              roleAssignment:
+                id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7
+                name: Role Assignment
+              userAccount:
+                id: 38df45c2-f4e2-4ffd-b91f-bc509ce8bcbf
+                name: User Account
+          # This integration is not using the fetch stage
+          # fetchers:
+          stagers:
+            opus:
+              id: e289e2c9-3b28-436d-84e1-c6a7c999c3f4
+              name: Generic Opus Stager
+          incorporation:
+            person:
+              id: 8b4263b7-ded0-4286-9528-d226bf45e136
+              name: Opus Employee -> RO Person
+            personAddress:
+              id: 72eff6a5-7bb3-48c2-8f83-1e77f99895e8
+              name: Opus Employee -> RO Person Address
+            position:
+              id: 2ab5d5ce-c19c-4200-9679-221e86c74e1b
+              name: Opus Employee -> RO Position
+            employment:
+              id: aec2bb3e-65db-4a59-a2c6-f13e8ec786ba
+              name: Opus Employee -> RO Employment
+            unit:
+              id: 5707d846-59b3-4d56-a4c8-7fb10f8611b3
+              name: Opus Org Unit -> RO Unit
+            unitTypeRelation:
+              id: 81bdb9da-42e2-433c-8df1-a2e0511549d7
+              name: Opus Org Unit -> RO Unit Type (Relation)
+            unitTypeCreation:
+              id: a7d1c070-d97b-4580-a48d-1c03f2b9fbc1
+              name: Opus Org Unit -> RO Unit Type (Creation)
+            roleAssignment:
+              id: 8cc67066-a549-4df4-b783-8db54b4d61dd
+              name: Opus Employee -> RO Role Assignment
+            employeeFunction:
+              id: 97caf29e-22ae-437c-8125-bd314282574c
+              name: Opus Function -> RO Role Assignment (Leder)
+            fakturagodkender:
+              id: ae338592-6c83-4e39-89dd-5e69636dcc3d
+              name: Opus Function -> RO Role Assignment (Fakturagodkender)
+            userAccount:
+              id: ba013d0e-1f19-49d1-b835-9c431f568dd2
+              name: Opus Employee -> RO User Account
+            location:
+              id: 47686cf0-7d51-497a-b156-d27a241e2492
+              name: Opus Org Unit -> RO Location
+            locationAddress:
+              id: bb91645c-c6e0-4a48-977c-646c23a84adc
+              name: Opus Org Unit -> RO Location Address
+        from: 2018-01-01T00:00:00.000Z
+...
