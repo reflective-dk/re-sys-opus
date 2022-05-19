@@ -16,8 +16,16 @@ registrations:
           mappings:
             excludeFromAdministrative:
               sourceAttribute:
-                type: path
-                path: [ employedAt, notAdministrativeUnit ]
+                - type: path
+                  path: [ employedAt, notAdministrativeUnit ]
+                - type: findAncestor
+                  selfIfNotFound: false
+                  parentRelation: parent
+                  condition:
+                    type: mustBeTruthy
+                    attribute: notAdministrativeUnit
+                - type: path
+                  path: [ notAdministrativeUnit ]
               targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: employeeId

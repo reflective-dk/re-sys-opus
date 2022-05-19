@@ -10,9 +10,20 @@ registrations:
           idSeed: [ street, zipCode ]
           transform: join
           condition:
-            type: mustNotBeTruthy
-            attribute: notAdministrativeUnit
+            type: mustNotProduceValue
+            mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                - type: findAncestor
+                  selfIfNotFound: false
+                  parentRelation: parent
+                  condition:
+                    type: mustBeTruthy
+                    attribute: notAdministrativeUnit
+                - type: path
+                  path: [ notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: street
               targetAttribute: name

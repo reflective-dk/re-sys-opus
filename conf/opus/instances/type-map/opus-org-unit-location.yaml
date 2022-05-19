@@ -9,9 +9,20 @@ registrations:
           targetType: { id: cfd8d4db-96cd-45e2-8de7-0b257b63a4e7, name: Location }
           idSeed: orgUnitId
           condition:
-            type: mustNotBeTruthy
-            attribute: notAdministrativeUnit
+            type: mustNotProduceValue
+            mapping: excludeFromAdministrative
           mappings:
+            excludeFromAdministrative:
+              sourceAttribute:
+                - type: findAncestor
+                  selfIfNotFound: false
+                  parentRelation: parent
+                  condition:
+                    type: mustBeTruthy
+                    attribute: notAdministrativeUnit
+                - type: path
+                  path: [ notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             name:
               sourceAttribute: name
               targetAttribute: name

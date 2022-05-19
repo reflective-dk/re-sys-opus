@@ -9,10 +9,21 @@ registrations:
           targetType: { id: 5cad9972-6560-4136-a9d5-40c2d109be9b, name: Unit }
           idSeed: orgUnitId
           condition:
-            type: mustNotBeTruthy
-            attribute: notAdministrativeUnit
+            type: mustNotProduceValue
+            mapping: excludeFromAdministrative
           mappings:
             # Note: Unit Type and Unit Owner are handled by tenant-specific type maps
+            excludeFromAdministrative:
+              sourceAttribute:
+                - type: findAncestor
+                  selfIfNotFound: false
+                  parentRelation: parent
+                  condition:
+                    type: mustBeTruthy
+                    attribute: notAdministrativeUnit
+                - type: path
+                  path: [ notAdministrativeUnit ]
+              targetAttribute: excludeFromAdministrative
             activeFrom:
               sourceAttribute: activeFrom
               targetAttribute: activeFrom
