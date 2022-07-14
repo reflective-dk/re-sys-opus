@@ -22,9 +22,6 @@ registrations:
               employment:
                 id: 06c495eb-fcef-4c09-996f-63fd2dfea427
                 name: Employment
-              person:
-                id: 66d33a37-f73c-4723-8dca-5feb9cf420e4
-                name: Person
               roleAssignment:
                 id: 025dfd36-f7a6-41e3-aa0c-64fe0376d3b7
                 name: Role Assignment
